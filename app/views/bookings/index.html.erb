@@ -1,0 +1,11 @@
+<h1> Alla bokningar </h1>
+
+<ul>
+  <% @bookings.each do |b| %>
+    <li>
+      <%= b %>
+      <%= link_to('Redigera', redigerabokning_path(b)) %>
+    </li>
+  <% end %>
+</ul>
+<%= link_to('Skapa ny bokning', nybokning_path) %>

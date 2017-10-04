@@ -1,0 +1,8 @@
+<h1>Redigera bokning</h1>
+<%= form_with(model: @booking, url: uppdaterabokning_path, remote: false) do |f| %>
+  <%= f.datetime_field(:start) %>
+  <%= f.datetime_field(:stop) %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to('Alla bokningar', allabokningar_path) %>
