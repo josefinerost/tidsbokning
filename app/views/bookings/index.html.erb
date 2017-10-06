@@ -4,8 +4,9 @@
   <% @bookings.each do |b| %>
     <li>
       <%= b %>
-      <%= link_to('Redigera', redigerabokning_path(b)) %>
+      <%= link_to('Redigera', edit_booking_path(b)) %>
+      <%= link_to('Ta bort', booking_path(b), method: :delete) %>
     </li>
   <% end %>
 </ul>
-<%= link_to('Skapa ny bokning', nybokning_path) %>
+<%= link_to('Skapa ny bokning', new_booking_path) %>

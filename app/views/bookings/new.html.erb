@@ -1,8 +1,4 @@
 <h1>Ny bokning</h1>
-<%= form_with(model: @booking, url: skapabokning_path, remote: false) do |f| %>
-  <%= f.datetime_field(:start) %>
-  <%= f.datetime_field(:stop) %>
-  <%= f.submit %>
-<% end %>
+<%= render('form', booking: @booking) %>
 
-<%= link_to('Alla bokningar', allabokningar_path) %>
+<%= link_to('Alla bokningar', bookings_path) %>

@@ -1,0 +1,5 @@
+<%= form_with(model: booking) do |f| %>
+  <%= f.datetime_field(:start) %>
+  <%= f.datetime_field(:stop) %>
+  <%= f.submit %>
+<% end %>
