@@ -9,6 +9,36 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <%= link_to(root_path, class: "navbar-item") do %>
+            <h1>
+              Tidsbokning
+            </h1>
+          <% end %>
+
+        </div>
+    </header>
+    <div class="columns">
+      <div class="column is-one-quarter">
+        <aside class="menu">
+          <ul class="menu-list">
+            <li>
+              <%= link_to('Alla bokningar', bookings_path) %>
+            </li>
+            <li>
+              <%= link_to('Ny bokning', new_booking_path) %>
+            </li>
+            <li>
+              <%= link_to('Kontakt', contact_path) %>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>
