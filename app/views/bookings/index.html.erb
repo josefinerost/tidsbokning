@@ -1,12 +1,27 @@
-<h1> Alla bokningar </h1>
+<h1 class="title"> Alla bokningar </h1>
 
-<ul>
-  <% @bookings.each do |b| %>
-    <li>
-      <%= b %>
-      <%= link_to('Redigera', edit_booking_path(b)) %>
-      <%= link_to('Ta bort', booking_path(b), method: :delete) %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to('Skapa ny bokning', new_booking_path) %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> Bokning </th>
+      <th> Datum </th>
+      <th> Starttid </th>
+      <th> Stopptid </th>
+      <th> Redigera </th>
+      <th> Ta bort </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bookings.each do |b| %>
+      <tr>
+        <td> <%= b.id %> </td>
+        <td> <%= b.start.to_date %> </td>
+        <td> <%= l(b.start, format: '%H:%M') %> </td>
+        <td> <%= l(b.stop, format: '%H:%M') %> </td>
+        <td> <%= link_to('Redigera', edit_booking_path(b), class: "button is-primary is-small") %> </td>
+        <td> <%= link_to('Ta bort', booking_path(b), method: :delete, class: "button is-danger is-small") %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
