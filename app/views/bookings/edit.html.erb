@@ -1,4 +1,4 @@
-<h1>Redigera bokning</h1>
+<h1 class="title"> Redigera bokning </h1>
 <%= render('form', booking: @booking) %>
-<%= link_to('Ta bort', booking_path(@booking), method: :delete) %>
-<%= link_to('Alla bokningar', bookings_path) %>
+<br/>
+<%= link_to('Ta bort', booking_path(@booking), method: :delete, class: 'button is-danger') %>

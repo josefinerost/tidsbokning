@@ -1,5 +1,5 @@
-<%= form_with(model: booking) do |f| %>
-  <%= f.datetime_field(:start) %>
-  <%= f.datetime_field(:stop) %>
-  <%= f.submit %>
+<%= simple_form_for(booking) do |f| %>
+  <%= f.input(:start, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
+  <%= f.input(:stop, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
+  <%= f.button(:submit) %>
 <% end %>
