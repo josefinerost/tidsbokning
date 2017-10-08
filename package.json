@@ -1,5 +1,8 @@
 {
   "name": "tidsbokning",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "flatpickr": "^3.0.7",
+    "sass-lint": "^1.12.0"
+  }
 }
