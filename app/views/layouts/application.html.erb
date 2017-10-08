@@ -22,7 +22,7 @@
     </header>
     <div class="columns">
       <div class="column is-one-quarter">
-        <aside class="menu">
+        <aside class="menu is-fullheight">
           <ul class="menu-list">
             <li>
               <%= link_to('Alla bokningar', bookings_path) %>
@@ -37,7 +37,9 @@
         </aside>
       </div>
       <div class="column">
-        <%= yield %>
+        <section class="section">
+          <%= yield %>
+        </section>
       </div>
     </div>
   </body>

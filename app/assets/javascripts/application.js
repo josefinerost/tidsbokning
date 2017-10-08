@@ -12,4 +12,5 @@
 //
 //= require rails-ujs
 //= require turbolinks
+//= require flatpickr/dist/flatpickr
 //= require_tree .

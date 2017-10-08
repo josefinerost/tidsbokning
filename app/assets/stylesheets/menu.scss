@@ -1,0 +1,18 @@
+.menu {
+  background: $primary-background;
+  padding: 3rem 1rem;
+
+  &.is-fullheight {
+    min-height: 100vh;
+  }
+
+  .menu-list {
+    a {
+      font-weight: bold;
+      &:hover {
+        background-color: $primary;
+        color: $white;
+      }
+    }
+  }
+}
