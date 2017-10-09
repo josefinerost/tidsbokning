@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   def to_s
-    "Bokning: #{id}, #{start}, #{stop}"
+    "Bokning: #{id}"
   end
 end

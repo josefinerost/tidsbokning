@@ -23,6 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 
 gem 'bulma-rails'
+gem 'jbuilder'
 gem 'simple_form'
 
 group :development, :test do
