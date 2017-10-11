@@ -20,40 +20,46 @@ jobs:
       - checkout
 
       # Download and cache dependencies
+      # fallback to using the latest cache if no exact match is found
       - restore_cache:
+          name: Restore ruby cache
           keys:
           - gem-v1-dependencies-{{ checksum "Gemfile.lock" }}
-          # fallback to using the latest cache if no exact match is found
           - gem-v1-dependencies-
 
+      - restore_cache:
+          name: Restore yarn cache
+          keys:
+            - yarn-v1-cache-checksum "yarn.lock" }}
+            - yarn-v1-cache-
+
       - run:
-          name: install dependencies
+          name: Install ruby dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --deployment --jobs=4 --retry=3
+
+      - run:
+          name: Install yarn dependencies
+          command: yarn install
 
       - save_cache:
+          name: Save ruby cache
           paths:
             - ./vendor/bundle
           key: gem-v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      - restore_cache:
-          keys:
-            - yarn-v1-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-v1-cache-{{ .Branch }}
-            - yarn-v1-cache
-
-      - run: yarn install
-
       - save_cache:
+          name: Save yarn cache
           key: yarn-v1-cache-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
 
       # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
-
-      # run tests!
       - run:
-          name: run tests
+          name: Setup database
+          command: bundle exec rake db:create db:migrate
+
+      # Run tests
+      - run:
+          name: Run tests
           command: bundle exec rails test
