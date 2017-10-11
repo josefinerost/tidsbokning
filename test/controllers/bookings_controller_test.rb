@@ -2,7 +2,10 @@ require 'test_helper'
 
 class BookingsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @booking = Booking.create(start: 2.hours.from_now, stop: 4.hours.from_now)
+    user = User.create(name: 'Josefine', email: 'jos@best.se')
+    @booking = Booking.create(start: 2.hours.from_now,
+                              stop: 4.hours.from_now,
+                              user: user)
   end
 
   test 'should get index' do
@@ -11,7 +14,6 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get new' do
-    
     get(new_booking_url)
     assert_response(:success)
   end
@@ -20,7 +22,9 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Booking.count') do
       post(bookings_url,
            params: {
-             booking: { start: @booking.start, stop: @booking.stop }
+             booking: { start: @booking.start,
+                        stop: @booking.stop,
+                        user_id: @booking.user_id }
            })
     end
 
@@ -35,7 +39,8 @@ class BookingsControllerTest < ActionDispatch::IntegrationTest
   test 'should update booking' do
     patch(booking_url(@booking),
           params: {
-            booking: { start: @booking.start, stop: @booking.stop }
+            booking: { start: @booking.start,
+                       stop: @booking.stop }
           })
     assert_redirected_to(bookings_url)
   end
