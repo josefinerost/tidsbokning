@@ -1,9 +1,10 @@
 function load() {
   $('#bookingcalendar').fullCalendar({
     header: {
-      right: 'agendaWeek, month'
+      right: 'today, prev, next, agendaWeek, month'
     },
     firstDay: 1,
+    weekNumbers: true,
     events: '/bokningar.json',
     views: {
       month: {
