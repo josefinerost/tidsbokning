@@ -1,4 +1,5 @@
 <%= simple_form_for(booking) do |f| %>
+  <%= f.association(:user, collection: User.all) %>
   <%= f.input(:start, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
   <%= f.input(:stop, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
   <%= f.button(:submit) %>
