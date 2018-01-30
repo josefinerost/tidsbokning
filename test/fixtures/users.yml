@@ -1,0 +1,11 @@
+josefine:
+  name: Josefine
+  email: josefine@rost.se
+  encrypted_password: <%= BCrypt::Password.create('passpass') %>
+  remember_token: <%= Clearance::Token.new %>
+
+david:
+  name: David
+  email: david@wessman.co
+  encrypted_password: <%= BCrypt::Password.create('passpass') %>
+  remember_token: <%= Clearance::Token.new %>

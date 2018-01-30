@@ -1,0 +1,4 @@
+first:
+  user: josefine
+  start: <%= 2.hours.from_now %>
+  stop: <%= 6.hours.from_now %>
