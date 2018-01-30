@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "flatpickr": "^3.0.7",
-    "fullcalendar": "^3.5.1",
+    "fullcalendar": "^3.8.1",
     "sass-lint": "^1.12.0"
   }
 }
