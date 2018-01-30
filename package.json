@@ -2,7 +2,7 @@
   "name": "tidsbokning",
   "private": true,
   "dependencies": {
-    "flatpickr": "^3.0.7",
+    "flatpickr": "^4.2.4",
     "fullcalendar": "^3.5.1",
     "sass-lint": "^1.12.0"
   }
