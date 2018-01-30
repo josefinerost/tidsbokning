@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.4.1-node-browsers
+      - image: circleci/ruby:2.5.0-node-browsers
         environment:
           PGHOST: 127.0.0.1
           PGUSER: user
@@ -40,7 +40,7 @@ jobs:
       - run:
           name: Install ruby dependencies
           command: |
-            bundle install --deployment --jobs=4 --retry=3
+            bundle install --system --jobs=4 --retry=3
 
       - run:
           name: Install yarn dependencies

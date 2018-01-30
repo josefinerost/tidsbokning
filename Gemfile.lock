@@ -200,26 +200,26 @@ PLATFORMS
 DEPENDENCIES
   bulma-rails
   byebug
-  capybara (~> 2.13)
+  capybara
   clearance
   jbuilder
   listen (>= 3.0.5, < 3.2)
   pg
-  puma (~> 3.7)
+  puma
   rails (~> 5.1.4)
   rubocop
-  sass-rails (~> 5.0)
+  sass-rails
   selenium-webdriver
   simple_form
   spring
-  spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  spring-watcher-listen
+  turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.0p0
 
 BUNDLED WITH
-   1.15.4
+   1.16.0
