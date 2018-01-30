@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :require_login, except: :index
   def index
     @bookings = Booking.all
   end
@@ -8,27 +9,26 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = current_user.bookings.build(booking_params)
     if @booking.save
       redirect_to(bookings_path)
     else
       render(:new, status: 422)
     end
-
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+    @booking = current_user.bookings.find(params[:id])
   end
 
   def update
-    booking = Booking.find(params[:id])
+    booking = current_user.bookings.find(params[:id])
     booking.update(booking_params)
     redirect_to(bookings_path)
   end
 
   def destroy
-    booking = Booking.find(params[:id])
+    booking = current_user.bookings.find(params[:id])
     booking.destroy
     redirect_to(bookings_path)
   end
@@ -36,6 +36,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start, :stop, :user_id)
+    params.require(:booking).permit(:start, :stop)
   end
 end
