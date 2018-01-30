@@ -9,6 +9,7 @@ ruby '2.4.1'
 gem 'rails', '~> 5.1.4'
 
 gem 'bulma-rails'
+gem 'clearance'
 gem 'jbuilder'
 gem 'pg'
 gem 'puma', '~> 3.7'
