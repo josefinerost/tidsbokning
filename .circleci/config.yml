@@ -40,7 +40,7 @@ jobs:
       - run:
           name: Install ruby dependencies
           command: |
-            bundle install --system --jobs=4 --retry=3
+            bundle install --deployment --jobs=4 --retry=3
 
       - run:
           name: Install yarn dependencies
