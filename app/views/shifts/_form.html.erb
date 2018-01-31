@@ -1,0 +1,6 @@
+<%= simple_form_for(shift) do |f| %>
+  <%= f.input(:weekday, collection: Shift.weekdays.keys, include_blank: false) %>
+  <%= f.input(:start, as: :string, placeholder: 'hh:mm') %>
+  <%= f.input(:stop, as: :string) %>
+  <%= f.button(:submit) %>
+<% end %>

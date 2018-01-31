@@ -1,0 +1,26 @@
+<h1 class="title"> Alla bokningar </h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> Pass </th>
+      <th> Veckodag </th>
+      <th> Starttid </th>
+      <th> Stopptid </th>
+      <th> Redigera </th>
+      <th> Ta bort </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @shifts.each do |s| %>
+      <tr>
+        <td> <%= s.id %> </td>
+        <td> <%= s.weekday %> </td>
+        <td> <%= l(s.start, format: '%H:%M') %> </td>
+        <td> <%= l(s.stop, format: '%H:%M') %> </td>
+        <td> <%= link_to('Redigera', edit_shift_path(s), class: "button is-primary is-small") %> </td>
+        <td> <%= link_to('Ta bort', '#', method: :delete, class: "button is-danger is-small") %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
