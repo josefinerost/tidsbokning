@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.5.0'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.1.5'
 
 gem 'bulma-rails'
 gem 'clearance'
