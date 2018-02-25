@@ -1,0 +1,26 @@
+<h1 class="title"> Alla events</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> Event </th>
+      <th> Datum </th>
+      <th> Starttid </th>
+      <th> Stopptid </th>
+      <th> Redigera </th>
+      <th> Ta bort </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |e| %>
+      <tr>
+        <td> <%= e.title %> </td>
+        <td> <%= e.start.to_date %> </td>
+        <td> <%= l(e.start, format: '%H:%M') %> </td>
+        <td> <%= l(e.stop, format: '%H:%M') %> </td>
+        <td> <%= link_to('Redigera', edit_event_path(e), class: "button is-primary is-small") %> </td>
+        <td> <%= link_to('Ta bort', event_path(e), method: :delete, class: "button is-danger is-small") %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
