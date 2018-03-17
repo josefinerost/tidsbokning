@@ -1,5 +1,9 @@
 <h1 class="title"> Alla events</h1>
 
+<div id="eventcalendar">
+
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -7,6 +11,7 @@
       <th> Datum </th>
       <th> Starttid </th>
       <th> Stopptid </th>
+      <th> Ansvarig </th>
       <th> Redigera </th>
       <th> Ta bort </th>
     </tr>
@@ -18,9 +23,12 @@
         <td> <%= e.start.to_date %> </td>
         <td> <%= l(e.start, format: '%H:%M') %> </td>
         <td> <%= l(e.stop, format: '%H:%M') %> </td>
+        <td> <%= e.user.name %> </td>
         <td> <%= link_to('Redigera', edit_event_path(e), class: "button is-primary is-small") %> </td>
         <td> <%= link_to('Ta bort', event_path(e), method: :delete, class: "button is-danger is-small") %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= link_to('Nytt event', new_event_path, class: 'button is-primary') %>

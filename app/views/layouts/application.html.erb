@@ -33,17 +33,22 @@
               <%= link_to('Ny bokning', new_booking_path) %>
             </li>
             <li>
-              <%= link_to('Kontakt', contact_path) %>
+              <%= link_to('Events', events_path) %>
             </li>
             <li>
-              <% if signed_in? %>
-                <%= current_user.name %>
-                <%= button_to "Sign out", sign_out_path, method: :delete %>
-              <% else %>
-                <%= link_to "Sign in", sign_in_path %>
-              <% end %>
+              <%= link_to('Kontakt', contact_path) %>
             </li>
           </ul>
+          <div style='padding:1em 0.75em'>
+          <% if signed_in? %>
+            <strong>
+            <%= current_user.name %>
+            </strong>
+            <%= button_to "Sign out", sign_out_path, method: :delete, class: 'button is-primary is-small' %>
+          <% else %>
+            <%= link_to "Sign in", sign_in_path, class: 'button is-primary is-small' %>
+          <% end %>
+          </div>
         </aside>
       </div>
       <div class="column">

@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :require_login, except: :index
+  
   def index
     @bookings = Booking.all
   end
@@ -29,7 +30,7 @@ class BookingsController < ApplicationController
 
   def destroy
     booking = current_user.bookings.find(params[:id])
-    booking.destroy
+    booking.destroy!
     redirect_to(bookings_path)
   end
 
