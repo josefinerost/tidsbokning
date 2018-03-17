@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :require_login, except: :index
+
   def index
     @events = Event.all
   end
@@ -8,7 +10,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(event_params)
+    @event = current_user.events.build(event_params)
     if @event.save
       redirect_to(events_path)
     else
@@ -17,7 +19,22 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
+    @event = current_user.events.find(params[:id])
+  end
+
+  def update
+    @event = current_user.events.find(params[:id])
+    if @event.update(event_params)
+      redirect_to(events_path)
+    else
+      render(:edit, status: 422)
+    end
+  end
+
+  def destroy
+    event = current_user.events.find(params[:id])
+    event.destroy!
+    redirect_to(events_path, notice: 'Eventet togs bort.')
   end
 
   private
