@@ -8,7 +8,7 @@ end
 ruby '2.5.0'
 gem 'rails', '~> 5.1.5'
 
-gem 'bulma-rails'
+gem 'bootsnap', require: false
 gem 'clearance'
 gem 'jbuilder'
 gem 'pg'
@@ -17,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -27,8 +28,6 @@ end
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop'
-  gem 'spring'
-  gem 'spring-watcher-listen'
   gem 'web-console', '>= 3.3.0'
 end
 
