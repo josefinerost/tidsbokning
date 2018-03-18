@@ -19,17 +19,23 @@ function load() {
     },
     aspectRatio: 2,
     slotDuration: '01:00:00',
-    defaultView: 'agendaWeek',
+    eventColor: '#7986CB',
     weekNumberTitle: 'V',
     firstDay: 1,
     weekNumbers: true,
     events: '/events.json',
     views: {
       month: {
-        displayEventTime: false
+        displayEventTime: false,
+        weekNumberTitle: 'Vecka'
       }
     }
   })
 }
 
+function remove_fullcalendar() {
+  $('#eventcalendar').html('')
+}
+
 document.addEventListener('turbolinks:load', load)
+document.addEventListener('turbolinks:before-cache', remove_fullcalendar)

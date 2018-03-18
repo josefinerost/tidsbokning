@@ -10,6 +10,7 @@ gem 'rails', '~> 5.1.5'
 
 gem 'bootsnap', require: false
 gem 'clearance'
+gem 'font-awesome-rails'
 gem 'jbuilder'
 gem 'pg'
 gem 'puma'

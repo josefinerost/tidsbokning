@@ -3,6 +3,11 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @user_events = signed_in? ? current_user.events : Event.none
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   def new
