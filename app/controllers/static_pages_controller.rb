@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @message = 'David är bäst!'
+    @events = Event.all
   end
 
   def contact
@@ -8,4 +8,6 @@ class StaticPagesController < ApplicationController
     @email = 'böreljörge@gmail.com'
     @phone = '1234567'
   end
+
+
 end

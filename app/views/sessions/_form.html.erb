@@ -1,22 +1,12 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
-
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
-
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
+<%= simple_form_for(:session, url:session_path) do |f| %>
+  <%= f.input(:email, as: :email) %>
+  <%= f.input(:password, as: :password) %>
+  <%= f.button(:submit, "Logga in") %>
 <% end %>
+
+<div class="other-links mt-6">
+  <% if Clearance.configuration.allow_sign_up? %>
+    <%= link_to("Registrering", sign_up_path, class: "button") %>
+  <% end %>
+  <%= link_to("Glömt lösenord", new_password_path, class: "button") %>
+</div>
