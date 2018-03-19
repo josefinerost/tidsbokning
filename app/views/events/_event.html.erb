@@ -1,0 +1,26 @@
+<div class="w-full md:w-1/2 p-2">
+  <div class="shadow-lg rounded-lg">
+    <div class="rounded-lg rounded-b-none h-64 bg-cover p-6" style="background-image:url(<%= image_url('winter.jpg') %>)">
+      <div class="bg-white h-16 w-16 rounded-lg p-2">
+        <div class="text-center text-lg font-bold">
+          <%= l(event.start, format: '%d') %>
+        </div>
+        <div class="text-center">
+          <%= l(event.start, format: '%b') %>
+        </div>
+      </div>
+    </div>
+    <div class="rounded-lg rounded-t-none border-b border-r border-l border-indigo-lighter py-2 px-4">
+      <h3 class="title">
+        <%= event.title %>
+      </h3>
+      <%= fa_icon('calendar', text: l(event.start, format: '%A %d %B %Y'))%>
+      <br/>
+      <%= fa_icon('clock-o', text: l(event.start, format: '%H:%M') + ' - ' + l(event.stop, format: '%H:%M'))%>
+      <br/>
+      <%= fa_icon('map-marker', text: 'Plats') %>
+      <br/>
+      <%= fa_icon('credit-card', text: 'Pris') %>
+    </div>
+  </div>
+</div>

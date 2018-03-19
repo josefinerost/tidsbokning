@@ -1,3 +1,4 @@
-<h1>Välkommen</h1>
-<%= link_to('Alla bokningar', bookings_path) %>
-<%= link_to('Kontakt', contact_path) %>
+<div class="flex flex-wrap">
+  <%= render(@events) %>
+
+</div>

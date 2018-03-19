@@ -12,50 +12,36 @@
 
   <body>
     <header>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar border-b border-indigo-light" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <%= link_to(root_path, class: "navbar-item") do %>
             <h1 class="title">
               Tidsbokning
             </h1>
           <% end %>
-
+        </div>
+        <div class="navbar-menu">
+          <div class="navbar-start">
+              <%= link_to("Events", events_path, class: "navbar-item text-lg hover:text-white") %>
+              <%= link_to("Bokningar", bookings_path, class: "navbar-item text-lg") %>
+              <%= link_to("Kontakt", contact_path, class: "navbar-item text-lg") %>
+          </div>
+          <div class="navbar-end">
+            <% if signed_in? %>
+              <div class="navbar-item">
+              <%= current_user.name %>
+            </div>
+              <%= link_to("Logga ut", sign_out_path, method: :delete, class: 'navbar-item') %>
+            <% else %>
+              <%= link_to("Logga in", sign_in_path, class: 'navbar-item') %>
+            <% end %>
+          </div>
         </div>
     </header>
-    <div class="columns">
-      <div class="column is-one-quarter min-h-screen">
-        <aside class="menu h-full">
-          <ul class="menu-list">
-            <li>
-              <%= link_to('Alla bokningar', bookings_path) %>
-            </li>
-            <li>
-              <%= link_to('Ny bokning', new_booking_path) %>
-            </li>
-            <li>
-              <%= link_to('Events', events_path) %>
-            </li>
-            <li>
-              <%= link_to('Kontakt', contact_path) %>
-            </li>
-          </ul>
-          <div style='padding:1em 0.75em'>
-          <% if signed_in? %>
-            <strong>
-            <%= current_user.name %>
-            </strong>
-            <%= button_to "Sign out", sign_out_path, method: :delete, class: 'button is-primary is-small' %>
-          <% else %>
-            <%= link_to "Sign in", sign_in_path, class: 'button is-primary is-small' %>
-          <% end %>
-          </div>
-        </aside>
-      </div>
-      <div class="column">
-        <section class="section">
-          <%= yield %>
-        </section>
-      </div>
-    </div>
+
+
+    <section class="section">
+      <%= yield %>
+    </section>
   </body>
 </html>
