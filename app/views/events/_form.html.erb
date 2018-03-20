@@ -1,7 +1,10 @@
 <%= simple_form_for(event) do |f| %>
   <%= f.input(:title, as: :string) %>
+  <%= f.input(:summary, as: :text) %>
   <%= f.input(:description, as: :text) %>
   <%= f.input(:start, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
   <%= f.input(:stop, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
+  <%= f.input(:location, as: :string) %>
+  <%= f.input(:price, as: :integer) %>
   <%= f.button(:submit) %>
 <% end %>

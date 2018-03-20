@@ -17,7 +17,7 @@ function load() {
     header: {
       right: 'today, prev, next, agendaWeek, month'
     },
-    aspectRatio: 2,
+    height: 500,
     slotDuration: '01:00:00',
     eventColor: '#7986CB',
     weekNumberTitle: 'V',

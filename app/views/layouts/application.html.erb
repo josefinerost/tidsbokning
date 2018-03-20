@@ -2,6 +2,7 @@
 <html lang="<%= I18n.locale %>">
   <head>
     <title>Tidsbokning</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,7 +23,7 @@
         </div>
         <div class="navbar-menu">
           <div class="navbar-start">
-              <%= link_to("Events", events_path, class: "navbar-item text-lg hover:text-white") %>
+              <%= link_to("Events", events_path, class: "navbar-item text-lg") %>
               <%= link_to("Bokningar", bookings_path, class: "navbar-item text-lg") %>
               <%= link_to("Kontakt", contact_path, class: "navbar-item text-lg") %>
           </div>
