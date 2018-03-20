@@ -29,9 +29,7 @@
           </div>
           <div class="navbar-end">
             <% if signed_in? %>
-              <div class="navbar-item">
-              <%= current_user.name %>
-            </div>
+              <%= link_to(current_user.name, profile_path, class: 'navbar-item') %>
               <%= link_to("Logga ut", sign_out_path, method: :delete, class: 'navbar-item') %>
             <% else %>
               <%= link_to("Logga in", sign_in_path, class: 'navbar-item') %>

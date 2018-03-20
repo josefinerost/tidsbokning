@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   resources :users, controller: :users, only: [:create] do
     resource :password,
-      controller: "clearance/passwords",
-      only: [:create, :edit, :update]
+             controller: "clearance/passwords",
+             only: [:create, :edit, :update]
   end
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get(:contact, controller: :static_pages, action: :contact)
   resources(:bookings, path: :bokningar)
   resources(:events)
+  resource(:profile, only: :show)
   resources(:shifts, path: :pass, only: [:index, :new, :edit, :create, :update])
   root(controller: :static_pages, action: :home)
 end
