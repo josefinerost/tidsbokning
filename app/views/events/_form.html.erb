@@ -6,5 +6,7 @@
   <%= f.input(:stop, as: :string, input_html: { class: 'datepicker is-narrow' }) %>
   <%= f.input(:location, as: :string) %>
   <%= f.input(:price, as: :integer) %>
+  <%= f.input(:image, as: :file) %>
+  <%= image_tag(event.image, class: 'h-64 mb-3 block') if event.image.attached? %>
   <%= f.button(:submit) %>
 <% end %>

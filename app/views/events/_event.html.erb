@@ -1,7 +1,8 @@
 <div class="w-full md:w-1/3 sm:w-1/2 p-2">
   <%= link_to(event_path(event.id), class: "text-grey-darkest") do %>
     <div class="shadow-lg rounded-lg">
-      <div class="rounded-lg rounded-b-none h-64 bg-cover p-6" style="background-image:url(<%= image_url('winter.jpg') %>)">
+      <div class="rounded-lg rounded-b-none h-64 bg-cover p-6"
+           style="background-image: url(<%= event.image.attached? ? url_for(event.image) : image_url('winter.jpg') %>)">
         <div class="bg-white h-16 w-16 rounded-lg p-2 border border-grey-light shadow-inner">
           <div class="text-center text-lg font-bold">
             <%= l(event.start, format: '%d') %>
