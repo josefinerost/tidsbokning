@@ -1,0 +1,38 @@
+
+<h1 class="title px-6"> Profil </h1>
+
+<div class="bg-indigo-lightest w-1/4 rounded-lg mb-6 p-2">
+  <div class="text-4xl">
+    <%= fa_icon('user', class: 'fa-2x', text: current_user.name) %>
+  </div>
+</div>
+
+<% if current_user.events.any? %>
+  <h3 class="title text-2xl" > Mina event </h3>
+  <table class="table text-grey-darkest">
+    <thead>
+      <tr>
+        <th> Event </th>
+        <th> Datum </th>
+        <th> Start </th>
+        <th> Stopp </th>
+        <th> Redigera </th>
+        <th> Ta bort </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_user.events.each do |e| %>
+        <tr>
+          <td> <%= link_to(e.title, event_path(e), class: "text-grey-darkest") %> </td>
+          <td> <%= e.start.to_date %> </td>
+          <td> <%= l(e.start, format: '%H:%M') %> </td>
+          <td> <%= l(e.stop, format: '%H:%M') %> </td>
+          <td> <%= link_to('Redigera', edit_event_path(e), class: "button is-primary is-small") %> </td>
+          <td> <%= link_to('Ta bort', event_path(e), method: :delete, class: "button is-danger is-small") %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+
+<%= link_to('Nytt event', new_event_path, class: 'button is-primary') %>
