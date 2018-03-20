@@ -7,4 +7,21 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
+const Rails = require('rails-ujs');
+const Turbolinks = require('turbolinks');
+
+import 'babel-polyfill'
+import 'flatpickr'
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $
+import 'moment'
+import 'fullcalendar'
+import 'fullcalendar/dist/locale/sv'
+
+Rails.start();
+Turbolinks.start();
+
+
 import 'src/tailwind.scss'
+import 'application'
