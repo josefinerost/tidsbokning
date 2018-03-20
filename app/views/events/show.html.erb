@@ -13,9 +13,9 @@
       <br/>
       <%= fa_icon('clock-o', text: l(@event.start, format: '%H:%M') + ' - ' + l(@event.stop, format: '%H:%M'))%>
       <br/>
-      <%= fa_icon('map-marker', text: 'Plats') %>
+      <%= fa_icon('map-marker', text: @event.location) %>
       <br/>
-      <%= fa_icon('credit-card', text: 'Pris') %>
+      <%= fa_icon('credit-card', text: "#{@event.price} kr") %>
     </div>
   </div>
 </div>

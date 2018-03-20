@@ -6,7 +6,7 @@
 
 <% if @user_events.any? %>
   <h3 class="title text-2xl" > Mina event</h3>
-  <table class="table">
+  <table class="table text-grey-darkest">
     <thead>
       <tr>
         <th> Event </th>
@@ -20,7 +20,7 @@
     <tbody>
       <% @user_events.each do |e| %>
         <tr>
-          <td> <%= e.title %> </td>
+          <td> <%= link_to(e.title, event_path(e), class: "text-grey-darkest") %> </td>
           <td> <%= e.start.to_date %> </td>
           <td> <%= l(e.start, format: '%H:%M') %> </td>
           <td> <%= l(e.stop, format: '%H:%M') %> </td>
