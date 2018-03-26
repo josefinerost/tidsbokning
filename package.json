@@ -2,7 +2,7 @@
   "name": "tidsbokning",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.1",
+    "@rails/webpacker": "^3.4.1",
     "bulma": "^0.6.2",
     "flatpickr": "^4.4.1",
     "fullcalendar": "^3.9.0",
