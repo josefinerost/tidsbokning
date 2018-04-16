@@ -6,8 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 ruby '2.5.0'
-gem 'rails', github: 'rails/rails', branch: '5-2-stable'
-gem 'coffee-rails' # Only required because of using 5-2-stable
+gem 'rails', '~> 5.2'
 
 gem 'bootsnap', require: false
 gem 'clearance'
