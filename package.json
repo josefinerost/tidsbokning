@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/webpacker": "^3.5.5",
     "bulma": "^0.7.5",
-    "flatpickr": "^4.5.7",
+    "flatpickr": "^4.6.1",
     "fullcalendar": "^3.9.0",
     "jquery": "^3.4.1",
     "rails-ujs": "^5.2.3",
