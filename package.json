@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^4.0.7",
-    "bulma": "^0.7.5",
+    "bulma": "^0.8.0",
     "flatpickr": "^4.6.3",
     "fullcalendar": "^3.9.0",
     "jquery": "^3.4.1",
