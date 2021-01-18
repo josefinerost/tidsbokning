@@ -5,7 +5,7 @@
     "@rails/webpacker": "^4.0.7",
     "bulma": "^0.7.5",
     "flatpickr": "^4.6.3",
-    "fullcalendar": "^3.9.0",
+    "fullcalendar": "^5.5.1",
     "jquery": "^3.4.1",
     "rails-ujs": "^5.2.3",
     "sass-lint": "^1.13.1",
