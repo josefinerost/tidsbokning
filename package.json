@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "tailwindcss": "^0.7.4",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^4.6.0",
     "webpack-dev-server": "3.x.x"
   }
 }
